@@ -33,8 +33,24 @@ export default async function middleware(req) {
 
 
 
-  const userDetails = await fetch(`${process.env.NEXTAUTH_URL}/api/checkuser/${session?.email}`,{cache:'no-store'})
-  const data = await userDetails.json();
+  // const userDetails = await fetch(`${process.env.NEXTAUTH_URL}/api/checkuser/${session?.email}`,{cache:'no-store'})
+  // const data = await userDetails.json();
+  // console.log("This is from middleware", data)
+
+let data = null;
+
+try {
+  const userDetailsResponse = await fetch(`${process.env.NEXTAUTH_URL}/api/checkuser/${session?.email}`, { cache: 'no-store' });
+
+  if (userDetailsResponse.ok) {
+    data = await userDetailsResponse.json();
+  } else {
+    // Handle non-OK response, e.g., show an error page or redirect
+    console.error('User details fetch failed:', userDetailsResponse.status, userDetailsResponse.statusText);
+  }
+} catch (error) {
+  console.error('Error fetching user details:', error);
+}
  
   
   if(!data.user && !req.nextUrl.pathname.startsWith('/create-profile')){
