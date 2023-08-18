@@ -11,7 +11,7 @@ const options = {
     limit: '40'
   },
   headers: {
-    'X-RapidAPI-Key': 'f70d3ec518msh43ed7336fa57609p166598jsn7556db329825',
+    'X-RapidAPI-Key': '051f936670msh5a067f1a4690e6cp19e46fjsn8afc38966b87',
     'X-RapidAPI-Host': 'twitter154.p.rapidapi.com'
   }
 };

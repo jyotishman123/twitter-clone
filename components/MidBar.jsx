@@ -11,13 +11,15 @@ const MidBar = ({title}) => {
   const [allPost,setAllPost] = useState();
   
 
-  const getPost = async ()=>{
-
+  const getPost = async () =>{
+let datas = null
     try{
       const response = await fetch('api/getposts');
       const postData = await response.json();
-       
       setAllPost(postData.allposts)
+      datas = postData;
+      console.log(datas)
+      
     } catch (error){
       console.log("There is an ", error)
     }
