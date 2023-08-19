@@ -81,7 +81,7 @@ const RightBar =  () => {
                 <img src={ele?.media_url} className="h-full w-full" alt="" />
                  
                </div>
-                <p className="py-2">{ele.text} </p>
+                <p className="py-2">{ele?.text} </p>
 
      <a href={ele?.expanded_url} className="font-bold">GO TO THE POST</a>
 
