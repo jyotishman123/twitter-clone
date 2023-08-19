@@ -23,7 +23,8 @@ try {
 
  
 	const response = await axios.request(options);
-  const limitData = await response.data.results.slice(0,20)
+  console.log(response)
+  const limitData = await response?.data?.results.slice(0,20) || [];
 
   return new Response(JSON.stringify({tweetData:limitData}))
  
