@@ -14,7 +14,7 @@ const MidBar = ({title}) => {
   const getPost = async () =>{
 let datas = null
     try{
-      const response = await fetch('api/getposts');
+      const response = await fetch('api/getposts',{cache:'no-store'});
       const postData = await response.json();
       setAllPost(postData.allposts)
       datas = postData;
