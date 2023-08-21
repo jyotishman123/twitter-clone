@@ -5,7 +5,7 @@ import { Avatar } from '@mui/material';
 import { TweetForm } from '@/components/TweetForm';
 
 
-export const fetchCache = 'force-no-store';
+
 const page = async () => {
   const session = await getServerSession(authOptions) 
    
