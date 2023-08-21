@@ -18,7 +18,7 @@ let datas = null
       const postData = await response.json();
       setAllPost(postData.allposts)
       datas = postData;
-      console.log(datas)
+      console.log("this", datas)
       
     } catch (error){
       console.log("There is an ", error)

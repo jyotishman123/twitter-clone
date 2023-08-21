@@ -9,7 +9,7 @@ export const GET = async (req)=>{
          const post = await Post.find({}).populate('creator')
          return new Response(JSON.stringify({sucess:true,allposts:post}))
      } catch(error){
-        return new Response(JSON.stringify({error:"This is the error", error}))
+        return new Response(error)
      }
 
 }
