@@ -5,6 +5,7 @@ import { getServerSession } from "next-auth/next"
 import LeftBar from '@/components/LeftBar';
 import MidBar from '@/components/MidBar';
 import RightBar from '@/components/RightBar';
+import Navbar from '@/components/Navbar';
 
  
 
@@ -17,8 +18,10 @@ import RightBar from '@/components/RightBar';
   return (
     
      <>
-     <div className='text-white flex justify-center'> 
+     <div className='text-white md:flex block justify-center'> 
        
+
+          <Navbar/>
          <LeftBar userSession={session}/>
          <MidBar title={"Home"}/>
          <RightBar/>

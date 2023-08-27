@@ -3,12 +3,13 @@
 import React, { useEffect, useState } from "react";
 import Loader from "./Loader";
 import cache from "memory-cache";
+import CloseIcon from '@mui/icons-material/Close';
  
 
 
 
 
-const RightBar =  () => {
+const MobileRightBar =  ({state,setChange}) => {
     
   const [data, setData] = useState([])
 
@@ -42,11 +43,11 @@ const RightBar =  () => {
   
 
   return (
-    <div className="  hidden md:block p-6 basis-1/4 sticky  h-[100vh] right-0 top-0">
+    <div className=  {state === 'right' ? ( "  block md:hidden w-[100vh] p-6 basis-1/4 fixed z-50 bg-black  h-[100vh] left-0 top-0") : ("hidden")}>
         
     
 
-      <div>
+      <div className="text-center">
         <h2 className="my-2 ml-2 py-2 font-bold text-2xl">Search</h2>
         <input
           type="text"
@@ -57,11 +58,14 @@ const RightBar =  () => {
         />
       </div>
 
-      <div className="mt-6 mb-2 pt-6 pb-3 text-left ">
+      <div className="mt-6 mb-2 text-center pt-6 pb-3 ">
         <h2 className="text-2xl font-extrabold">Whats happening!</h2>
+        <div className="bg-slate-800 w-fit p-4 rounded-full my-3 mx-auto">
+            <CloseIcon onClick={()=>setChange()}/>
+        </div>
       </div>
 
-      <div className="h-[calc(100vh-260px)] overflow-y-scroll">
+      <div className="h-[calc(100vh-260px)]  flex flex-wrap justify-center w-[100vw]  overflow-y-scroll overflow-x-hidden">
 
 
        {data.length === 0 && (
@@ -75,7 +79,7 @@ const RightBar =  () => {
           data.map((ele,index) => {
             return (
      
-            <div key={index} className=" bg-slate-900 rounded-lg py-3 px-4 text-sm my-4 text-slate-400 font-semibold">
+            <div key={index} className=" w-[250px]    bg-slate-900 rounded-lg py-3 px-4 text-sm my-4 mx-2  text-slate-400 font-semibold">
                <div>
                 <img src={ele?.media_url} className="h-full w-full" alt="" />
                  
@@ -96,4 +100,4 @@ const RightBar =  () => {
   );
 };
 
-export default RightBar;
+export default MobileRightBar;

@@ -33,7 +33,7 @@ let datas = null
  
 
   return (
-    <div className=' basis-1/2 border-r border-slate-800  py-3'>
+    <div className=' basis-2/2 md:basis-1/2 border-r border-slate-800  py-3'>
       <div className='sticky top-0  border-b border-slate-800  z-20 backdrop-blur'> 
       <div className='py-2 px-4 '>
         <h1 className='text-xl font-bold'>{title}</h1>

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import HomeIcon from '@mui/icons-material/Home';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import ListIcon from '@mui/icons-material/List';
 import PeopleIcon from '@mui/icons-material/People';
 import Avatar from '@mui/material/Avatar';
@@ -23,7 +22,7 @@ const res2 = await fetch(`${process.env.NEXTAUTH_URL}/api/getposts`);
 
   
   return(
-    <div className=" basis-1/4 sticky left-0 top-0  border-r border-slate-800 h-[100vh] p-6">
+    <div className="  hidden md:block basis-1/4 sticky left-0 top-0  border-r border-slate-800 h-[100vh] p-6">
         <div className="flex justify-center">
            <Image src={"/assets/twitter-logo.png"} height={60} width={60}/> 
         </div>
@@ -37,28 +36,15 @@ const res2 = await fetch(`${process.env.NEXTAUTH_URL}/api/getposts`);
              </Link>
              </div>
             </div>
-            <div className="my-3 py-3 font-semibold text-2xl">
-              <div className="flex items-center"> 
-              <NotificationsActiveIcon className="mx-2"/>
-             <Link href={"/"}>
-                   Notification
-             </Link>
-             </div>
-            </div> <div className="my-3 py-3 font-semibold text-2xl">
+             <div className="my-3 py-3 font-semibold text-2xl">
               <div className="flex items-center"> 
               <ListIcon className="mx-2"/>
              <Link href={"/"}>
                    Lists
              </Link>
              </div>
-            </div> <div className="my-3 py-3 font-semibold text-2xl">
-              <div className="flex items-center"> 
-              <PeopleIcon className="mx-2"/>
-             <Link href={"/"}>
-                    Communities
-             </Link>
-             </div>
-            </div> <div className="my-3 py-3 font-semibold text-2xl">
+            </div>  
+             <div className="my-3 py-3 font-semibold text-2xl">
               <div className="flex items-center"> 
               <PeopleIcon className="mx-2"/>
              <Link href={"/"}>

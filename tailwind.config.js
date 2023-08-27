@@ -20,6 +20,24 @@ module.exports = {
         blur: 'blur(30px)',
       },
     },
+    screens: {
+      
+
+      sm: '680px',
+      // => @media (min-width: 640px) { ... }
+
+      md: '800px',
+      // => @media (min-width: 768px) { ... }
+
+      lg: '1057px',
+      // => @media (min-width: 1024px) { ... }
+
+      xl: '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    },
   },
   plugins: [],
 }

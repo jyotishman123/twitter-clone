@@ -59,10 +59,10 @@ if (session) {
 }
  
   
-  if(!data.user && !req.nextUrl.pathname.startsWith('/create-profile')){
+  if(!data?.user && !req.nextUrl.pathname.startsWith('/create-profile')){
      return NextResponse.redirect(new URL("/create-profile", req.url))
   }
-  else if(data.user && req.nextUrl.pathname.startsWith('/create-profile')){
+  else if(data?.user && req.nextUrl.pathname.startsWith('/create-profile')){
      return NextResponse.redirect(new URL("/", req.url))
   }
 
