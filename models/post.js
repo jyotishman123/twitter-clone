@@ -15,7 +15,7 @@ const PostSchema = new Schema({
         default: null, // Optional field; set to null if not provided.
       },
       likes:{
-        type:Array,
+        type:[String],
         default:[]
       },
       creator:{

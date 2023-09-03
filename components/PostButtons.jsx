@@ -24,6 +24,7 @@ const PostButtons = ({post_id, likes}) => {
      })
      const data = await response.json();
        setLikeArray(data.like)
+       console.log(likeArray)
    }
 
  
