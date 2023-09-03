@@ -17,6 +17,10 @@ export const PATCH = async (request, { params }) => {
       });
 
       post.likes = update;
+      await post.save();
+      return new Response(JSON.stringify({ like: post.likes }));
+
+
     } else {
       // If user_id is not in the likes array, add it
       post.likes.push(user_id);
