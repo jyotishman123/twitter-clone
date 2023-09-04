@@ -52,7 +52,7 @@ let datas = null
          </div>
        )}
        
-       {allPost?.map((posts, index)=>{
+       {allPost?.reverse().map((posts, index)=>{
          return(<PostCard key={index} postDetails={posts}/>)
        })}
       </div>
