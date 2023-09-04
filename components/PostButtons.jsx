@@ -36,9 +36,9 @@ const PostButtons = ({post_id, likes}) => {
       
 <div className='flex items-center'> 
    <p className='mx-2'>
-     {likeArray.length}
+     {likeArray?.length}
    </p>
-      {likeArray.includes(session?.user?.email)? <FavoriteIcon onClick={likePost} className='cursor-pointer' sx={{color:red[500]}}/> : <FavoriteBorderIcon onClick={likePost} className='cursor-pointer'/> }
+      {likeArray?.includes(session?.user?.email)? <FavoriteIcon onClick={likePost} className='cursor-pointer' sx={{color:red[500]}}/> : <FavoriteBorderIcon onClick={likePost} className='cursor-pointer'/> }
 </div>
       {/* <FavoriteBorderIcon className='cursor-pointer'  onClick={likePost} sx={{color:red[500]}} /> */}
        <NotesOutlinedIcon className='cursor-pointer'/>
