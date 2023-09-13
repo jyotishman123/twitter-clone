@@ -15,6 +15,10 @@ const PostButtons = ({post_id, likes}) => {
   const [likeArray,setLikeArray] = useState(likes)
   
   async function likePost(){
+
+// updating with try catch blocks
+     try{
+    
      const response = await fetch(`api/postlike/${post_id}`,{
         method: 'PATCH',
         body:JSON.stringify({
@@ -25,7 +29,14 @@ const PostButtons = ({post_id, likes}) => {
      const data = await response.json();
         setLikeArray(data.like)
        console.log(likeArray)
+   } catch(error){
+       console.log(error);
+       throw Error(error);
+       
    }
+   }
+ 
+    
 
  
 
