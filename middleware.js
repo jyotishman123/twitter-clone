@@ -71,7 +71,7 @@ if (session) {
 
 }
 export const config = {
-  matcher:["/",'/login','/create-profile','/new-tweet','/api/checkuser'],
+  matcher:["/",'/login','/create-profile','/new-tweet','/api/checkuser','/api/trendingtweets'],
   api: {
     bodyParser: false,  // Disable built-in bodyParser
   },
